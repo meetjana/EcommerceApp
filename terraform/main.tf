@@ -1,3 +1,18 @@
+terraform {
+  required_version = ">= 1.1.0"
+  requried_providers {
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "~> 4.14.0"
+    }
+  }
+  cloud {
+    organization = "upskilljana"
+    workspaces {
+      name = "AZWorkspaceTF"
+    }
+  }
+}
 provider "azurerm" {
   features {}
 
